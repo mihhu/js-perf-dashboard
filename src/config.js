@@ -310,8 +310,16 @@ const DEFAULT_SUITES = [
 
 export const CONFIG = {
   default: {
+<<<<<<< HEAD
     landingPath: '/win10/overview?numDays=90',
     timeRange: 90, // 90 days
+||||||| merged common ancestors
+    landingPath: '/win10/overview',
+    timeRange: 90 * 24 * 3600,
+=======
+    landingPath: '/win10/overview/90',
+    timeRange: 90, // 90 days
+>>>>>>> Issue #35 - Select a time range to zoom
     colors: ['#e55525', '#ffcd02'],
     labels: ['Firefox', 'Chrome'],
   },
