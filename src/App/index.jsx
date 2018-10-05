@@ -19,7 +19,7 @@ const App = ({ classes }) => (
   <BrowserRouter>
     <Switch>
       <Route
-        path="/:platform/:benchmark/:timeRange"
+        path="/:platform/:benchmark"
         render={({ match }) => {
           const { platform, benchmark } = match.params;
           // eslint-disable-next-line no-restricted-globals
