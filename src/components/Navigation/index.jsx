@@ -4,14 +4,21 @@ import { withRouter } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Pickers from '../Pickers';
 import Slider from '../Slider';
+import DatePicker from '../DatePicker';
 import { generateLastDaysLabel } from '../../utils/timeRangeUtils';
 
 const styles = () => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
+    alignItems: 'center',
     textAlign: 'center',
-    padding: '15px',
+  },
+  pickers: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
@@ -51,13 +58,22 @@ class Navigation extends Component {
     const {
       classes, platform, benchmark, timeRange,
     } = this.props;
+    const fortnightBack = new Date(Date.now() - 12096e5);
+    const defaultStartTime = fortnightBack.toISOString().slice(0, 10);
+
     return (
       <div className={classes.root}>
-        <Pickers
-          onChange={this.handlePathChange}
-          platform={platform}
-          benchmark={benchmark}
-        />
+        <div className={classes.pickers}>
+          <Pickers
+            onChange={this.handlePathChange}
+            platform={platform}
+            benchmark={benchmark}
+          />
+          <DatePicker
+            label="Start date"
+            defaultValue={defaultStartTime}
+          />
+        </div>
         <Slider
           identifier="timeRange"
           label="Time range"

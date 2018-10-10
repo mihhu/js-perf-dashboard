@@ -10,7 +10,7 @@ const styles = () => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    maxWidth: 305,
+    minWidth: 305,
     margin: '0 20px',
     padding: '15px',
     textAlign: 'left',
